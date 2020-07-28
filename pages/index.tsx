@@ -1,4 +1,6 @@
+import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -19,15 +21,19 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Current Weather &rarr;</h3>
-            <p>Can't look out the window? See the current weather in your area.</p>
-          </a>
+          <Link href="/current">
+            <div className={styles.card} data-testid="current-weather">
+              <h3>Current Weather &rarr;</h3>
+              <p>Can't look out the window? See the current weather in your area.</p>
+            </div>
+          </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>5-Day Forecast &rarr;</h3>
-            <p>See high and low temperatures for the next five days in your area.</p>
-          </a>
+          <Link href="/fiveday">
+            <div className={styles.card} data-testid="five-day-forecast">
+              <h3>5-Day Forecast &rarr;</h3>
+              <p>See high and low temperatures for the next five days in your area.</p>
+            </div>
+          </Link>
         </div>
       </main>
 
@@ -36,6 +42,7 @@ export default function Home() {
           href="https://github.com/mawills/vroom-weather"
           target="_blank"
           rel="noopener noreferrer"
+          data-testid="github-link"
         >
           See source code on GitHub
         </a>
