@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState, FunctionComponent } from 'react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import Loading from '../components/Loading';
+import ErrorMessage from '../components/Error';
 
 interface CurrentWeatherData {
     name: string;
@@ -46,7 +47,7 @@ export async function getCurrentWeatherByCoords(latitude: number, longitude: num
         })
 }
 
-const CurrentWeatherPage: React.FC = () => {
+const CurrentWeatherPage: FunctionComponent = () => {
     const [error, setError] = useState<string|false>(false);
     const [loading, setLoading] = useState(true);
     const [weatherData, setWeatherData] = useState<CurrentWeatherData>({
@@ -85,25 +86,11 @@ const CurrentWeatherPage: React.FC = () => {
     }, []);
 
     if (loading) {
-        return( 
-            <div>
-                <h1>Current weather:</h1>
-                <p data-testid="loading-message">Loading...</p>
-                <br />
-                <Link href="/"><p>Click here to go back</p></Link>
-            </div>
-        );
+        return <Loading />
     }
 
     if (error) {
-        return( 
-            <div>
-                <h1>Current weather:</h1>
-                <p data-testid="error-message">{error}</p>
-                <br />
-                <Link href="/"><p>Click here to go back</p></Link>
-            </div>
-        );
+        return <ErrorMessage message={error} />
     }
 
     return( 

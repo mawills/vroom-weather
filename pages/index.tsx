@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { NUM_DAYS } from '../constants/constants';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -28,10 +29,10 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link href="/fiveday">
-            <div className={styles.card} data-testid="five-day-forecast">
-              <h3>5-Day Forecast &rarr;</h3>
-              <p>See high and low temperatures for the next five days in your area.</p>
+          <Link href="/future">
+            <div className={styles.card} data-testid="future-forecast">
+              <h3>{NUM_DAYS}-Day Forecast &rarr;</h3>
+              <p>See high and low temperatures for the next {NUM_DAYS} days in your area.</p>
             </div>
           </Link>
         </div>
