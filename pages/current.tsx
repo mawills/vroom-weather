@@ -1,7 +1,7 @@
 import React, { useEffect, useState, FunctionComponent } from 'react';
 import Link from 'next/link';
 import Loading from '../components/Loading';
-import ErrorMessage from '../components/Error';
+import ErrorMessage from '../components/ErrorMessage';
 
 interface CurrentWeatherData {
     name: string;

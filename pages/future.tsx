@@ -1,7 +1,7 @@
 import React, { useEffect, useState, FunctionComponent } from 'react';
 import Link from 'next/link';
 import Loading from '../components/Loading';
-import ErrorMessage from '../components/Error';
+import ErrorMessage from '../components/ErrorMessage';
 import { NUM_DAYS } from '../constants/constants';
 import styles from '../styles/Home.module.css';
 

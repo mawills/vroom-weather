@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 
-interface ErrorProps {
+interface ErrorMessageProps {
     message: string;
 }
 
-const ErrorMessage: FunctionComponent<ErrorProps> = ({ message }) => {
+const ErrorMessage: FunctionComponent<ErrorMessageProps> = ({ message }) => {
     return( 
         <div>
             <p data-testid="error-message">{message}</p>
@@ -16,8 +16,3 @@ const ErrorMessage: FunctionComponent<ErrorProps> = ({ message }) => {
 }
 
 export default ErrorMessage;
-
-
-
-
-
