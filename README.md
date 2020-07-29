@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Set up dev environment
 
-First, copy .env.development and insert your OpenWeather API key:
+First, copy .env.development and insert your OpenWeather API key into .env.local:
 ```bash
 cp .env.development .env.local
 ```
